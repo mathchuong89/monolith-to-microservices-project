@@ -49,4 +49,4 @@ workflows:
     jobs:
       - build_and_push:
           context:
-            - ContextForDockerHub  # Correct indentation here
+            - ContextForDockerHub
