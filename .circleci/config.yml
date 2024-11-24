@@ -3,7 +3,7 @@ version: 2.1
 executors:
   docker-executor:
     docker:
-      - image: circleci/python:3.8  # Use any base image you need for your project
+      - image: circleci/python:3.8
     working_directory: ~/repo  # Working directory for the code
 
 jobs:
@@ -38,10 +38,10 @@ jobs:
             docker push $DOCKER_USERNAME/udagram-api-user:$CIRCLE_SHA1
 
       - run:
-          name: Build and push udagram-reverseproxy
+          name: Build and push reverseproxy
           command: |
-            docker build -t $DOCKER_USERNAME/udagram-reverseproxy:$CIRCLE_SHA1 ./udagram-reverseproxy
-            docker push $DOCKER_USERNAME/udagram-reverseproxy:$CIRCLE_SHA1
+            docker build -t $DOCKER_USERNAME/reverseproxy:$CIRCLE_SHA1 ./reverseproxy
+            docker push $DOCKER_USERNAME/reverseproxy:$CIRCLE_SHA1
 
 workflows:
   version: 2
