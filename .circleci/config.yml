@@ -48,5 +48,5 @@ workflows:
   build_and_push_images:
     jobs:
       - build_and_push
-        context:
-          - ContextForDockerHub
+          context:
+            - ContextForDockerHub
